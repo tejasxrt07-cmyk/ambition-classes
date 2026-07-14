@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Ambition Classes"
+version = "1.0.0"
+id = "artifacts/ambition-classes"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21176
+
+[services.development]
+run = "pnpm --filter @workspace/ambition-classes run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ambition-classes", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ambition-classes/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21176"
+BASE_PATH = "/"

@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "PXSiIuVvycyVkiaXHSdOp"
+uri = "file://exports/ambition-classes-source.zip"
+type = "unspecified"
+title = "Ambition Classes — Complete Project Source Code (ZIP)"
